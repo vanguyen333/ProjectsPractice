@@ -5,29 +5,31 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-
-<TextView
-    android:id="@+id/tv"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_centerInParent="true"
-    android:gravity="center"
-    android:text="This is activity 1"
-    android:textSize="20dp"
-    android:textColor="@color/design_default_color_primary_dark"/>
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="600dp"/>
+    <Button
+        android:id="@+id/fragment1btn"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:text="Fragment1"
+        android:backgroundTint="@color/black"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="50dp"
+        android:layout_marginStart="50dp"
+        />
 
     <Button
-        android:id="@+id/btnmain"
-        android:layout_below="@id/tv"
-
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:gravity="center"
-        android:layout_marginTop="10dp"
-        android:text="Open Puppy"
-        android:onClick="openMain2"
-        android:textSize="20dp"
+        android:id="@+id/fragment2btn"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:text="Fragment2"
+        android:backgroundTint="@color/black"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="50dp"
+        android:layout_marginEnd="50dp"
         />
 
 

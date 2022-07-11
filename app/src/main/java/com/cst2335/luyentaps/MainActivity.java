@@ -1,6 +1,9 @@
 package com.cst2335.luyentaps;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,18 +12,37 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button btn;
+    Button firstFragment, secondFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        btn = findViewById(R.id.btnmain);
+
+    firstFragment = findViewById(R.id.fragment1btn);
+    secondFragment = findViewById(R.id.fragment2btn);
+
+    firstFragment.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            replacefragment(new fragment1());
+        }
+    });
+
+    secondFragment.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            replacefragment(new fragment2());
+        }
+    });
 
 
     }//end of onCreate
-    public void openMain2(View view){
-        startActivity(new Intent(this, MainActivity2.class));
-    }
+private void replacefragment(Fragment fragment){
+    FragmentManager fragmentManager = getSupportFragmentManager();
+    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+    fragmentTransaction.replace(R.id.frameLayout,fragment);
+    fragmentTransaction.commit();
+}
 
 }//end of class
